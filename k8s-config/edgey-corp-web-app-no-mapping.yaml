@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: dataprocessingservice
-        image: docker.io/adamquan/dataprocessingnodeservice
+        image: docker.io/adamquan/dataprocessingservice
         ports:
         - containerPort: 3000
         env:
@@ -24,7 +24,7 @@ spec:
         - name: OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
           value: "https://tempo-us-central1.grafana.net:443"
         - name: OTEL_SERVICE_NAME
-          value: "dataprocessingnodeservice"
+          value: "dataprocessingservice"
         - name: OTEL_TRACES_EXPORTER
           value: "otlp"
         - name: OTEL_EXPORTER_OTLP_TRACES_HEADERS
