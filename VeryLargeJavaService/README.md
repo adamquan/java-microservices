@@ -6,9 +6,9 @@ All commands assume that this folder is your working directory.
 ```
 mvn clean install
 
-docker build . -t danielbryantuk/verylargejavaservice
+docker build . -t adamquan/verylargejavaservice
 
-docker push danielbryantuk/verylargejavaservice
+docker push adamquan/verylargejavaservice
 ```
 
 ## Run locally
