@@ -6,9 +6,9 @@ All commands assume that this folder is your working directory.
 ```
 mvn clean install
 
-docker build . -t danielbryantuk/verylargedatastore
+docker build . -t adamquan/verylargedatastore
 
-docker push danielbryantuk/verylargedatastore
+docker push adamquan/verylargedatastore
 ```
 
 ## Run locally
