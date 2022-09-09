@@ -2,7 +2,7 @@
 
 Sample Microservices application instrumented with OpenTelementry. Traces are sent to Grafana Cloud.
 
-[Original Doc](https://www.getambassador.io/docs/telepresence/latest/quick-start/qs-java/)
+[Original Doc](https://www.getambassador.io/docs/telepresence/latest/quick-start/qs-java/) and [Blog](https://dzone.com/articles/rapidly-develop-java-microservices-on-kubernetes-w)
 
 1. Create k8s cluster in GKE
 2. Deploy 
