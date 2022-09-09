@@ -1,5 +1,17 @@
-# Edgey Corp Sample App 
+# Microservices Sample App
 
-Welcome to the Telepresence quickstart guide in Java. Please see our official quickstart guide for instructions on how to get started: [quickstart guide in Java](https://www.getambassador.io/docs/latest/telepresence/quick-start/qs-java/)
+Sample Microservices application instrumented with OpenTelementry. Traces are sent to Grafana Cloud.
 
-If you have any questions or feedback, please join the Ambassador community in the #telepresence channel within the [Ambassador Slack](a8r.io/slack).
+[Original Doc](https://www.getambassador.io/docs/telepresence/latest/quick-start/qs-java/)
+
+1. Create k8s cluster in GKE
+2. Deploy 
+```
+kubectl apply -f https://raw.githubusercontent.com/adamquan/java-microservices/main/k8s-config/edgey-corp-web-app-no-mapping.yaml
+```
+
+
+3. Clean up
+```
+kubectl delete -f https://raw.githubusercontent.com/adamquan/java-microservices/main/k8s-config/edgey-corp-web-app-no-mapping.yaml
+```
