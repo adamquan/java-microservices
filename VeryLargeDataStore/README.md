@@ -18,7 +18,14 @@ docker build . -t adamquan/verylargedatastore --platform amd64
 ```
 
 ## Run locally
-All commands assume that this folder is your working directory.
+All commands assume that this folder is your working directory. The `server.port` option configures the port the service is listening on. Default is `8080`, which might conflict with the `VeryLargeJavaService` service if you run them on the same host.
+
+To run the service without OTEL instrumentation:
+```
+./mvnw spring-boot:run -Dspring-boot.run.arguments="--server.port=4000"
+```
+
+To run the service with OTEL instrumentation:
 ```
 export JAVA_TOOL_OPTIONS="-javaagent:./opentelemetry-javaagent.jar"
 export OTEL_TRACES_EXPORTER=otlp
