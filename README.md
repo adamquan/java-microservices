@@ -4,6 +4,8 @@ Sample Microservices application instrumented with OpenTelementry. Traces are se
 
 [Original Doc](https://www.getambassador.io/docs/telepresence/latest/quick-start/qs-java/) and [Blog](https://dzone.com/articles/rapidly-develop-java-microservices-on-kubernetes-w)
 
+# Deploy in GKE
+
 1. Create k8s cluster in GKE
 2. Deploy 
 ```
@@ -15,3 +17,11 @@ kubectl apply -f https://raw.githubusercontent.com/adamquan/java-microservices/m
 ```
 kubectl delete -f https://raw.githubusercontent.com/adamquan/java-microservices/main/k8s-config/edgey-corp-web-app-no-mapping.yaml
 ```
+
+# Deploy in Docker
+
+```
+docker-compose up
+```
+
+Open browser and point to [http://localhost:8080](http://localhost:8080)
