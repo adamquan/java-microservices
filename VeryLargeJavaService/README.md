@@ -18,7 +18,14 @@ docker build . -t adamquan/verylargejavaservice --platform amd64
 ```
 
 ## Run locally
-All commands assume that this folder is your working directory.
+All commands assume that this folder is your working directory. The `nodeservice.host` option configures where the `DataProcessingService` service is running, on port `3000`.
+
+To run the service without OTEL instrumentation:
+```
+./mvnw spring-boot:run -Dspring-boot.run.arguments="--nodeservice.host=localhost"
+```
+
+To run the service with OTEL instrumentation:
 ```
 export JAVA_TOOL_OPTIONS="-javaagent:./opentelemetry-javaagent.jar"
 export OTEL_TRACES_EXPORTER=otlp
