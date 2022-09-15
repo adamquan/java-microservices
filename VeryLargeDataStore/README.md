@@ -20,5 +20,5 @@ docker build . -t adamquan/verylargedatastore --platform amd64
 ## Run locally
 All commands assume that this folder is your working directory.
 ```
-./mvnw spring-boot:run
+./mvnw spring-boot:run --server.port=4000
 ```
