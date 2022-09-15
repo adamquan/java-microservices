@@ -25,3 +25,10 @@ docker-compose up
 ```
 
 Open browser and point to [http://localhost:8080](http://localhost:8080)
+
+# Run locally
+
+Start each serivce separately, see: 
+- [VeryLargeJavaService](https://github.com/adamquan/java-microservices/tree/main/VeryLargeJavaService)
+- [DataProcessingService](https://github.com/adamquan/java-microservices/blob/main/DataProcessingService/README.md)
+- [VeryLargeDataStore](https://github.com/adamquan/java-microservices/blob/main/VeryLargeDataStore/README.md)
