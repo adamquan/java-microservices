@@ -1,5 +1,34 @@
-# Edgey Corp Sample App 
+# Microservices Sample App
 
-Welcome to the Telepresence quickstart guide in Java. Please see our official quickstart guide for instructions on how to get started: [quickstart guide in Java](https://www.getambassador.io/docs/latest/telepresence/quick-start/qs-java/)
+Sample Microservices application instrumented with OpenTelementry. Traces are sent to Grafana Cloud.
 
-If you have any questions or feedback, please join the Ambassador community in the #telepresence channel within the [Ambassador Slack](a8r.io/slack).
+[Original Doc](https://www.getambassador.io/docs/telepresence/latest/quick-start/qs-java/) and [Blog](https://dzone.com/articles/rapidly-develop-java-microservices-on-kubernetes-w)
+
+# Deploy in GKE
+
+1. Create k8s cluster in GKE
+2. Deploy 
+```
+kubectl apply -f https://raw.githubusercontent.com/adamquan/java-microservices/main/k8s-config/edgey-corp-web-app-no-mapping.yaml
+```
+
+
+3. Clean up
+```
+kubectl delete -f https://raw.githubusercontent.com/adamquan/java-microservices/main/k8s-config/edgey-corp-web-app-no-mapping.yaml
+```
+
+# Deploy in Docker
+
+```
+docker-compose up
+```
+
+Open browser and point to [http://localhost:8080](http://localhost:8080)
+
+# Run locally
+
+Start each serivce separately, see: 
+- [VeryLargeJavaService](https://github.com/adamquan/java-microservices/tree/main/VeryLargeJavaService)
+- [DataProcessingService](https://github.com/adamquan/java-microservices/blob/main/DataProcessingService/README.md)
+- [VeryLargeDataStore](https://github.com/adamquan/java-microservices/blob/main/VeryLargeDataStore/README.md)
