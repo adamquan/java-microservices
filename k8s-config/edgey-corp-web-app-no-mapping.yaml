@@ -45,7 +45,7 @@ spec:
     protocol: TCP
   selector:
     run: dataprocessingservice
-
+  type: LoadBalancer
 
 ---
 apiVersion: apps/v1
@@ -94,6 +94,7 @@ spec:
     protocol: TCP
   selector:
     run: verylargejavaservice
+  type: LoadBalancer
 
 ---
 apiVersion: apps/v1

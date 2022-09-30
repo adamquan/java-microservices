@@ -1,13 +1,22 @@
 package io.getambasador.dataprocessingservicejava.rest;
 
+import java.util.Collections;
 import java.util.List;
+import java.net.URL;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import io.getambasador.dataprocessingservicejava.dto.EdgyMerch;
 import okhttp3.OkHttpClient;
@@ -62,6 +71,17 @@ public class DataProcessingController {
 
     @GetMapping("findMerch")
     public ResponseEntity<List<EdgyMerch>> findMerch(@RequestParam String country, @RequestParam String season) {
+        URL url;
+        try {
+            url = new URL("http://44.195.23.39/welcome");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+            int responseCode = con.getResponseCode();
+		    System.out.println("GET Response Code :: " + responseCode);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(defaultDatastoreUrl)
@@ -76,6 +96,7 @@ public class DataProcessingController {
         } catch (Exception ex) { 
             System.out.println(ex);
             return ResponseEntity.badRequest().build();
-         }
+        }
+
     }
 }

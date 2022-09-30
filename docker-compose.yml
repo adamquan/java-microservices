@@ -1,0 +1,38 @@
+version: "3"
+services:
+
+  # verylargejavaservice
+  verylargejavaservice:
+    image: docker.io/adamquan/verylargejavaservice
+    environment:
+      JAVA_TOOL_OPTIONS: -javaagent:/opt/app/opentelemetry-javaagent.jar
+      OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: https://tempo-us-central1.grafana.net:443
+      OTEL_SERVICE_NAME: verylargejavaservice
+      OTEL_TRACES_EXPORTER: otlp
+      OTEL_EXPORTER_OTLP_TRACES_HEADERS: Authorization=Bearer 160639:eyJrIjoiYjkzMDA1NDE0ODRhYWRjYzgwNjg0YTJlNzcyZmY0MThmMDNiOTRjMiIsIm4iOiJ0ZXN0IiwiaWQiOjYwMTM4MH0=
+    ports:
+      - "8080:8080"
+
+  # dataprocessingservice
+  dataprocessingservice:
+    image: docker.io/adamquan/dataprocessingservice
+    environment:
+      JAVA_TOOL_OPTIONS: -javaagent:/opt/app/opentelemetry-javaagent.jar
+      OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: https://tempo-us-central1.grafana.net:443
+      OTEL_SERVICE_NAME: dataprocessingservice
+      OTEL_TRACES_EXPORTER: otlp
+      OTEL_EXPORTER_OTLP_TRACES_HEADERS: Authorization=Bearer 160639:eyJrIjoiYjkzMDA1NDE0ODRhYWRjYzgwNjg0YTJlNzcyZmY0MThmMDNiOTRjMiIsIm4iOiJ0ZXN0IiwiaWQiOjYwMTM4MH0=
+    ports:
+      - "3000"
+
+  # verylargedatastore
+  verylargedatastore:
+    image: docker.io/adamquan/verylargedatastore
+    environment:
+      JAVA_TOOL_OPTIONS: -javaagent:/opt/app/opentelemetry-javaagent.jar
+      OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: https://tempo-us-central1.grafana.net:443
+      OTEL_SERVICE_NAME: verylargedatastore
+      OTEL_TRACES_EXPORTER: otlp
+      OTEL_EXPORTER_OTLP_TRACES_HEADERS: Authorization=Bearer 160639:eyJrIjoiYjkzMDA1NDE0ODRhYWRjYzgwNjg0YTJlNzcyZmY0MThmMDNiOTRjMiIsIm4iOiJ0ZXN0IiwiaWQiOjYwMTM4MH0=
+    ports:
+      - "8080"
